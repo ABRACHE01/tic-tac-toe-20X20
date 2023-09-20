@@ -25,8 +25,17 @@ margin: 1rem;
     height: 100vh;
     text-align: center;
 }    
+.box{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bolder;
+    color:cornflowerblue;
+    background-color: #ced4da;
+}
 #starting{
-    height: 100vh;
+    height: 100%;
     text-align: center;
 }
 #username1 ,#username2 {
