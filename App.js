@@ -94,6 +94,7 @@ function toggleVisibility() {
 
 
 function checkWin(symbol) {
+  
   const lengthToWin = 5;
   for (let row = 0; row < 20; row++) {
     let count = 0;
@@ -128,7 +129,7 @@ function checkWin(symbol) {
       if (board[index] === symbol) {
         count++;
         if (count === lengthToWin) {
-            gameEnds=true;
+            gameEnds = true;
             console.log(`Player ${symbol} wins row!`);
           if(symbol == 'O'){
             scorPlayerO ++;
@@ -155,7 +156,7 @@ function checkWin(symbol) {
         if (board[index] === symbol) {
           count++;
           if (count === lengthToWin) {
-            gameEnds ==true ;
+            gameEnds = true ;
             console.log(`Player ${symbol} wins diagonally!`);
             if(symbol == 'O'){
               scorPlayerO ++;
@@ -182,7 +183,7 @@ function checkWin(symbol) {
         if (board[index] === symbol) {
           count++;
           if (count === lengthToWin) {
-            gameEnds == true ;
+            gameEnds = true ;
             console.log(`Player ${symbol} wins diagonally!`);
             if(symbol == 'O'){
               scorPlayerO ++;
