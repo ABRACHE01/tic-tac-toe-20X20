@@ -36,18 +36,18 @@
             <h1>Tic-Tac-Toe Game</h1>
             <div class="userNames">
                 <div>
-                    <h2>Player 1 :<span id="placeName1"></span></h2>
-                    <h2>Score:</h2>
+                    <h2 class="bg-red">Player O :<span id="placeName1"></span></h2>
+                    <h2>Score: <span id="score-O">0</span></h2>
                 </div>
                 <div>
-                    <h2>Player 2 :<span id="placeName2"></span></h2>
-                    <h2>Score:</h2>
+                    <h2 class="bg-green">Player X :<span id="placeName2"></span></h2>
+                    <h2 >Score: <span id="score-X">0</span></h2>
                 </div>
             </div>
         </div>
         <div id="game"> </div>
         </div>
-        <button class="button pad" onclick={}>Restart </button>
+        <button class="button pad" id="reset" onclick={reset()}>Restart </button>
     </section>
 
 

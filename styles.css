@@ -6,10 +6,22 @@ body{
     font-family: karla ;
     font-size: large;
 }
-
 h1{
     font-size: 50px;
 }
+.bg-red{
+background-color: #90EE90;
+padding: 12px;
+border-radius: 12px;
+}
+.bg-green{
+    background-color: #FF6347;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+
+
 .pad{
 margin: 1rem;
 }
@@ -31,7 +43,7 @@ margin: 1rem;
     justify-content: center;
     font-size: x-large;
     font-weight: bolder;
-    color:cornflowerblue;
+    color: white ;
     background-color: #ced4da;
 }
 #starting{
