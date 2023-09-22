@@ -9,15 +9,20 @@ body{
 h1{
     font-size: 50px;
 }
-.bg-red{
-background-color: #90EE90;
-padding: 12px;
-border-radius: 12px;
-}
 .bg-green{
-    background-color: #FF6347;
-    padding: 12px;
-    border-radius: 12px;
+border-bottom: solid 5px  #c2efdf;
+}
+
+.profileCharacter{
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+
+}
+
+.bg-red{
+    border-bottom: solid 5px  #ffc6d3;
 }
 
 
