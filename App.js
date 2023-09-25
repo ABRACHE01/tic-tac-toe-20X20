@@ -1,7 +1,7 @@
 //confiti import 
-const canvas = document.getElementById('my-canvas')
-const jsConfetti = new JSConfetti()
 
+const canvas = document.getElementById('my-canvas')
+const jsConfetti = new JSConfetti() 
 
 
 
@@ -20,10 +20,10 @@ const scoreO = document.getElementById("score-O");
 const scoreX = document.getElementById("score-X") ; 
 const redUser = document.getElementById("redUser");
 const greenUser = document.getElementById("greenUser") ; 
+ const scoreTag=document.getElementById('scoreTag')
 
 
-
-document.getElementById('scoreTag').innerText = localStorage.getItem('highScore') == null ? 0 : localStorage.getItem('highScore');
+ scoreTag.innerText = localStorage.getItem('highScore') == null ? 0 : localStorage.getItem('highScore');
 starting.style.display = "none";
 
 const boardSize = 20;
@@ -34,7 +34,8 @@ function toggleVisibility() {
 
   if ((userName1.value && userName2.value) === "" || (userName1.value.length && userName2.value.length) <= 4) {
 
-    alert("Please fill the username first to be at 4 characters");
+
+    Swal.fire("Please fill the username first to be at 4 characters")
 
   } else {
 
@@ -117,9 +118,9 @@ function checkWin(symbol) {
         if (count === lengthToWin) {
           gameEnds=true;
           jsConfetti.addConfetti({
-            emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+            emojis: ['⭐', '✨', '💫', '⭐'],
          })
-          console.log(`Player ${symbol} wins in a column!`);
+         Swal.fire(`the user ${symbol} wins `)
           if(symbol == 'O'){
             scorPlayerO ++;
             scoreO.innerText = scorPlayerO ;
@@ -129,7 +130,6 @@ function checkWin(symbol) {
             scoreX.innerText = scorPlayerX ;
           }   
           storHighScore() 
-          return true;
         }
       } else {
         count = 0;
@@ -147,9 +147,10 @@ function checkWin(symbol) {
         if (count === lengthToWin) {
           gameEnds=true;
           jsConfetti.addConfetti({
-            emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+            emojis: ['⭐', '✨', '💫', '⭐'],
          })
-            console.log(`Player ${symbol} wins row!`);
+         Swal.fire(`the user ${symbol} wins `)
+
           if(symbol == 'O'){
             scorPlayerO ++;
             scoreO.innerText = scorPlayerO ;
@@ -159,7 +160,6 @@ function checkWin(symbol) {
             scoreX.innerText = scorPlayerX ;
           }   
           storHighScore()
-          return true;
         }
       } else {
         count = 0;
@@ -178,9 +178,10 @@ function checkWin(symbol) {
           if (count === lengthToWin) {
             gameEnds=true;
             jsConfetti.addConfetti({
-              emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+              emojis: ['⭐', '✨', '💫', '⭐'],
            })
-            console.log(`Player ${symbol} wins diagonally!`);
+           Swal.fire(`the user ${symbol} wins `)
+
             if(symbol == 'O'){
               scorPlayerO ++;
               scoreO.innerText = scorPlayerO ;
@@ -190,7 +191,6 @@ function checkWin(symbol) {
               scoreX.innerText = scorPlayerX ;
             }   
             storHighScore()
-            return true;
           }
         } else {
           break;
@@ -209,9 +209,10 @@ function checkWin(symbol) {
           if (count === lengthToWin) {
             gameEnds=true;
             jsConfetti.addConfetti({
-              emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+              emojis: ['⭐', '✨', '💫', '⭐'],
            })
-            console.log(`Player ${symbol} wins diagonally!`);
+           Swal.fire(`the user ${symbol} wins `)
+
             if(symbol == 'O'){
               scorPlayerO ++;
               scoreO.innerText = scorPlayerO ;
@@ -221,7 +222,6 @@ function checkWin(symbol) {
               scoreX.innerText = scorPlayerX ;
             }   
             storHighScore()
-            return true;
           }
         } else {
           break;
@@ -230,20 +230,23 @@ function checkWin(symbol) {
     }
   }
 
-  return false;
 }
 
 
 //stor the highest score in the game in local storage 
 function storHighScore(){
   if(gameEnds){
-    console.log("check")
     if(scorPlayerO  > scorPlayerX ){
       highScore = scorPlayerO ; 
+      scoreTag.innerHTML= highScore;
       localStorage.setItem('highScore', highScore );
+      
+     
     }else{
       highScore = scorPlayerX ;
+      scoreTag.innerHTML= highScore;
       localStorage.setItem('highScore', highScore );
+      
     }
   }
 }
